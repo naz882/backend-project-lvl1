@@ -1,0 +1,2 @@
+<a href="https://codeclimate.com/github/naz882/backend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/c6e2d88f79f15ed7da64/maintainability" /></a>
+<a href="https://codeclimate.com/github/naz882/backend-project-lvl1/test_coverage"><img src="https://api.codeclimate.com/v1/badges/c6e2d88f79f15ed7da64/test_coverage" /></a>
