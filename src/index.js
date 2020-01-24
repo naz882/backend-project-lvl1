@@ -24,4 +24,18 @@ const OperationWithTwoNumbers = (number1, number2, sign) => {
   }
 };
 
-export { checkEvenOdd, getName, OperationWithTwoNumbers };
+const getGcd = (number1, number2) => {
+  const smallestNumber = number1 > number2 ? number2 : number1;
+  let gcd = 0;
+  for (let i = 1; i <= smallestNumber; i += 1) {
+    if (number1 % i === 0 && number2 % i === 0) {
+      gcd = i;
+    }
+  }
+  return gcd;
+};
+
+
+export {
+  checkEvenOdd, getName, OperationWithTwoNumbers, getGcd,
+};
