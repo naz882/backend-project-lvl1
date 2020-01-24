@@ -46,8 +46,16 @@ const getArithmeticSequence = (start, step) => {
   }
   return result;
 };
+const isPrimeNumber = (number) => {
+  for (let i = 2; i < number; i += 1) {
+    if (number % 2 === 0) {
+      return 'no';
+    }
+  }
+  return 'yes';
+};
 
 
 export {
-  checkEvenOdd, getName, OperationWithTwoNumbers, getGcd, getArithmeticSequence,
+  checkEvenOdd, getName, OperationWithTwoNumbers, getGcd, getArithmeticSequence, isPrimeNumber,
 };
