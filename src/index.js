@@ -5,4 +5,4 @@ const actual = () => {
   console.log(`Hello ${name} !`);
 };
 
-export {actual}
+export default actual;
