@@ -2,7 +2,7 @@
 import readlineSync from 'readline-sync';
 import { getName, checkEvenOdd } from '../..';
 
-const brainEven = () => {
+const startBrainEven = () => {
   console.log('Welcome to the Brain is Even Game!');
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   const name = getName();
@@ -23,4 +23,4 @@ const brainEven = () => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export default brainEven;
+export default startBrainEven;

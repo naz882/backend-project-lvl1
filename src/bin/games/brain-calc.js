@@ -2,7 +2,7 @@
 import readlineSync from 'readline-sync';
 import { getName, OperationWithTwoNumbers } from '../..';
 
-const brainCalc = () => {
+const startBrainCalc = () => {
   console.log('Welcome to the Brain calc!');
   console.log('What is the result of the expression?.');
   const name = getName();
@@ -27,4 +27,4 @@ const brainCalc = () => {
   }
 };
 
-export default brainCalc;
+export default startBrainCalc;
