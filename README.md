@@ -4,3 +4,4 @@
 [![Build Status](https://travis-ci.com/naz882/backend-project-lvl1.svg?branch=master)](https://travis-ci.com/naz882/backend-project-lvl1)
 
 https://asciinema.org/a/XJac9LhsdGnq9PYQDLvyYMlsx
+https://asciinema.org/a/7HYafAfS1fDGQJBcWSNShYHtk

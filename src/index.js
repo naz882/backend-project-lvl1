@@ -35,7 +35,19 @@ const getGcd = (number1, number2) => {
   return gcd;
 };
 
+const getArithmeticSequence = (start, step) => {
+  const result = [];
+  let k = 0;
+  let newStart = start;
+  while (k < 10) {
+    result.push(newStart);
+    newStart += step;
+    k += 1;
+  }
+  return result;
+};
+
 
 export {
-  checkEvenOdd, getName, OperationWithTwoNumbers, getGcd,
+  checkEvenOdd, getName, OperationWithTwoNumbers, getGcd, getArithmeticSequence,
 };
