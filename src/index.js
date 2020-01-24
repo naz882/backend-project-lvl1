@@ -10,4 +10,18 @@ const checkEvenOdd = (randomNmb) => {
   const EvenOdd = randomNmb % 2 === 0 ? 'yes' : 'no';
   return EvenOdd;
 };
-export { checkEvenOdd, getName };
+
+const OperationWithTwoNumbers = (number1, number2, sign) => {
+  switch (sign) {
+    case '-':
+      return number1 - number2;
+    case '+':
+      return number1 + number2;
+    case '*':
+      return number1 * number2;
+    default:
+      break;
+  }
+};
+
+export { checkEvenOdd, getName, OperationWithTwoNumbers };
