@@ -12,16 +12,16 @@ const checkEvenOdd = (randomNmb) => {
 };
 
 const OperationWithTwoNumbers = (number1, number2, sign) => {
-  switch (sign) {
-    case '-':
-      return number1 - number2;
-    case '+':
-      return number1 + number2;
-    case '*':
-      return number1 * number2;
-    default:
-      break;
+  if (sign === '-') {
+    return number1 - number2;
   }
+  if (sign === '+') {
+    return number1 + number2;
+  }
+  if (sign === '*') {
+    return number1 * number2;
+  }
+  return null;
 };
 
 const getGcd = (number1, number2) => {
