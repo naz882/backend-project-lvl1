@@ -1,26 +1,23 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import { getName, getGcd } from '../..';
+import startGame from '../..';
 
-const startBrainGcd = () => {
-  console.log('Welcome to the Brain calc!');
-  console.log('Find the greatest common divisor of given numbers.');
-  const name = getName();
-
-  for (let i = 0; i < 3; i += 1) {
-    const randomNumb1 = Math.floor(Math.random() * 100);
-    const randomNumb2 = Math.floor(Math.random() * 100);
-    console.log(`Question: ${randomNumb1} ${randomNumb2}`);
-    const gcd = getGcd(randomNumb1, randomNumb2);
-    const answer = readlineSync.question('Your answer: ');
-
-    if (Number(answer) === gcd) {
-      console.log('Correct!');
-    } else {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${gcd}`);
-      console.log(`Let's try again, ${name}!`);
+const getGcd = (number1, number2) => {
+  const smallestNumber = number1 > number2 ? number2 : number1;
+  let gcd = 0;
+  for (let i = 1; i <= smallestNumber; i += 1) {
+    if (number1 % i === 0 && number2 % i === 0) {
+      gcd = i;
     }
   }
+  return gcd;
 };
 
-export default startBrainGcd;
+const description = 'Find the greatest common divisor of given numbers.';
+const func = () => {
+  const randomNumb1 = Math.floor(Math.random() * 100);
+  const randomNumb2 = Math.floor(Math.random() * 100);
+  const question = `Question: ${randomNumb1} ${randomNumb2}`;
+  const correctAnswer = getGcd(randomNumb1, randomNumb2);
+  return [question, correctAnswer];
+};
+export default () => startGame(description, func);

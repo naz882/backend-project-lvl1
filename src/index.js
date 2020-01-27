@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
 const getName = () => {
@@ -5,57 +6,23 @@ const getName = () => {
   console.log(`Hello ${name} !`);
   return name;
 };
-
-const checkEvenOdd = (randomNmb) => {
-  const EvenOdd = randomNmb % 2 === 0 ? 'yes' : 'no';
-  return EvenOdd;
-};
-
-const OperationWithTwoNumbers = (number1, number2, sign) => {
-  if (sign === '-') {
-    return number1 - number2;
-  }
-  if (sign === '+') {
-    return number1 + number2;
-  }
-  if (sign === '*') {
-    return number1 * number2;
-  }
-  return null;
-};
-
-const getGcd = (number1, number2) => {
-  const smallestNumber = number1 > number2 ? number2 : number1;
-  let gcd = 0;
-  for (let i = 1; i <= smallestNumber; i += 1) {
-    if (number1 % i === 0 && number2 % i === 0) {
-      gcd = i;
+const startGame = (description, getData) => {
+  const greetings = getName();
+  console.log(description);
+  let gameCount = 0;
+  while (gameCount < 3) {
+    const array = getData();
+    console.log(array[0]);
+    const yourAnswer = readlineSync.question('Your answer: ');
+    if (yourAnswer === array[1]) {
+      console.log('Correct!');
+      gameCount += 1;
+    } else {
+      console.log(`'${yourAnswer}' is wrong answer ;(. Correct answer was '${array[1]}'.`);
+      console.log(`Let's try again, ${greetings}!`);
     }
   }
-  return gcd;
+  console.log(`Congratulations, ${greetings}`);
 };
 
-const getArithmeticSequence = (start, step) => {
-  const result = [];
-  let k = 0;
-  let newStart = start;
-  while (k < 10) {
-    result.push(newStart);
-    newStart += step;
-    k += 1;
-  }
-  return result;
-};
-const isPrimeNumber = (number) => {
-  for (let i = 2; i < number; i += 1) {
-    if (number % 2 === 0) {
-      return 'no';
-    }
-  }
-  return 'yes';
-};
-
-
-export {
-  checkEvenOdd, getName, OperationWithTwoNumbers, getGcd, getArithmeticSequence, isPrimeNumber,
-};
+export default startGame;

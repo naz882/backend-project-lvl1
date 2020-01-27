@@ -1,26 +1,15 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import { getName, checkEvenOdd } from '../..';
+import startGame from '../..';
 
-const startBrainEven = () => {
-  console.log('Welcome to the Brain is Even Game!');
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  const name = getName();
-
-  for (let i = 0; i < 3; i += 1) {
-    const randomNumb = Math.floor(Math.random() * 100);
-    const checked = checkEvenOdd(randomNumb);
-    console.log(`Question: ${randomNumb}`);
-    const answer = readlineSync.question('Your answer: ');
-
-    if ((answer === 'yes' && checked === 'yes') || (answer === 'no' && checked === 'no')) {
-      console.log('Correct!');
-    } else {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${checked}`);
-      console.log(`Let's try again, ${name}!`);
-    }
-  }
-  console.log(`Congratulations, ${name}!`);
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+const checkEvenOdd = (randomNmb) => {
+  const EvenOdd = randomNmb % 2 === 0 ? 'yes' : 'no';
+  return EvenOdd;
 };
-
-export default startBrainEven;
+const func = () => {
+  const numb = Math.floor(Math.random() * 100);
+  const question = `Question: ${numb}`;
+  const correctAnswer = checkEvenOdd(numb);
+  return [question, correctAnswer];
+};
+export default () => startGame(description, func);

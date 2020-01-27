@@ -1,30 +1,28 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import { getName, getArithmeticSequence } from '../..';
 
-const startBrainArithSequence = () => {
-  console.log('Welcome to the Brain Games!');
-  console.log('What number is missing in the progression?');
-  const name = getName();
+import startGame from '../..';
 
-  for (let i = 0; i < 3; i += 1) {
-    const randomNumb1 = Math.floor(Math.random() * 10);
-    const randomNumb2 = Math.floor(Math.random() * 10);
-    const sequence = getArithmeticSequence(randomNumb1, randomNumb2);
-    const RandomElement = Math.floor(Math.random() * sequence.length);
-    const hiddenAnswer = sequence[RandomElement];
-    sequence[RandomElement] = '..';
-    console.log(`Question: ${sequence}`);
-    const answer = readlineSync.question('Your answer: ');
-
-    if (Number(answer) === hiddenAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${hiddenAnswer}`);
-      console.log(`Let's try again, ${name}!`);
-    }
+const getArithmeticSequence = (start, step) => {
+  const result = [];
+  let k = 0;
+  let newStart = start;
+  while (k < 10) {
+    result.push(newStart);
+    newStart += step;
+    k += 1;
   }
-  console.log(`Congratulations, ${name}!`);
+  return result;
 };
 
-export default startBrainArithSequence;
+const description = 'What number is missing in the progression?';
+const func = () => {
+  const randomNumb1 = Math.floor(Math.random() * 10);
+  const randomNumb2 = Math.floor(Math.random() * 10);
+  const sequence = getArithmeticSequence(randomNumb1, randomNumb2);
+  const randomElementOfSequence = Math.floor(Math.random() * sequence.length);
+  const correctAnswer = sequence[randomElementOfSequence];
+  sequence[randomElementOfSequence] = '..';
+  const question = `Question: ${sequence}`;
+  return [question, Number(correctAnswer)];
+};
+export default () => startGame(description, func);

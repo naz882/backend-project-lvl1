@@ -1,30 +1,30 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import { getName, OperationWithTwoNumbers } from '../..';
+import startGame from '../..';
 
-const startBrainCalc = () => {
-  console.log('Welcome to the Brain calc!');
-  console.log('What is the result of the expression?.');
-  const name = getName();
-
-  const signs = ['+', '-', '*'];
-
-  for (let i = 0; i < 3; i += 1) {
-    const random = Math.floor(Math.random() * signs.length);
-    const randomNumb1 = Math.floor(Math.random() * 10);
-    const randomNumb2 = Math.floor(Math.random() * 10);
-    const randomSign = signs[random];
-    const resultOfTwo = OperationWithTwoNumbers(randomNumb1, randomNumb2, randomSign);
-    console.log(`Question: ${randomNumb1} ${randomSign} ${randomNumb2}`);
-    const answer = readlineSync.question('Your answer: ');
-
-    if (Number(answer) === resultOfTwo) {
-      console.log('Correct!');
-    } else {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${resultOfTwo}`);
-      console.log(`Let's try again, ${name}!`);
-    }
+const OperationWithTwoNumbers = (number1, number2, sign) => {
+  if (sign === '-') {
+    return number1 - number2;
   }
+  if (sign === '+') {
+    return number1 + number2;
+  }
+  if (sign === '*') {
+    return number1 * number2;
+  }
+  return null;
 };
 
-export default startBrainCalc;
+const description = 'What is the result of the expression?.';
+
+const signs = ['+', '-', '*'];
+
+const func = () => {
+  const random = Math.floor(Math.random() * signs.length);
+  const randomNumb1 = Math.floor(Math.random() * 10);
+  const randomNumb2 = Math.floor(Math.random() * 10);
+  const randomSign = signs[random];
+  const correctAnswer = OperationWithTwoNumbers(randomNumb1, randomNumb2, randomSign);
+  const question = `Question: ${randomNumb1} ${randomSign} ${randomNumb2}`;
+  return [question, correctAnswer];
+};
+export default () => startGame(description, func);
