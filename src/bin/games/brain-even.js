@@ -12,4 +12,4 @@ const func = () => {
   const correctAnswer = checkEvenOdd(numb);
   return [question, correctAnswer];
 };
-export default () => startGame(description, func);
+export default () => startGame(description, func, 'answerisString');

@@ -18,4 +18,4 @@ const func = () => {
   const question = `Question: ${randomNumb}`;
   return [question, correctAnswer];
 };
-export default () => startGame(description, func);
+export default () => startGame(description, func, 'answerisString');

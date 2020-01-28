@@ -6,15 +6,20 @@ const getName = () => {
   console.log(`Hello ${name} !`);
   return name;
 };
-const startGame = (description, getData) => {
+const startGame = (description, getData, game) => {
   const greetings = getName();
   console.log(description);
   let gameCount = 0;
   while (gameCount < 3) {
     const array = getData();
-    console.log(array[0]);
-    const yourAnswer = readlineSync.question('Your answer: ');
-    if (yourAnswer === array[1]) {
+    const question = array[0];
+    const correctAnswer = array[1];
+    console.log(question);
+    let yourAnswer = readlineSync.question('Your answer: ');
+    if (game !== 'answerisString') {
+      yourAnswer = Number(yourAnswer);
+    }
+    if (yourAnswer === correctAnswer) {
       console.log('Correct!');
       gameCount += 1;
     } else {
