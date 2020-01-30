@@ -10,4 +10,4 @@ const getAnswerAndQuestion = () => {
   const correctAnswer = checkEvenOdd(numb) ? 'yes' : 'no';
   return [question, correctAnswer];
 };
-export default () => startGame(description, getAnswerAndQuestion, 'answerisString');
+export default () => startGame(description, getAnswerAndQuestion);
