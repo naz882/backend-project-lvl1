@@ -3,7 +3,7 @@ import random from '../../utils';
 import startGame from '../..';
 
 const isPrimeNumber = (number) => {
-  if (number < 0 || number === 1 || number === 0) {
+  if (number <= 0 || number === 1) {
     return false;
   }
   for (let i = 2; i < number / 2; i += 1) {
