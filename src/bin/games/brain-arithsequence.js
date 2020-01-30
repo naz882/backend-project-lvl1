@@ -15,7 +15,7 @@ const getArithmeticSequence = (start, step, length) => {
 };
 
 const description = 'What number is missing in the progression?';
-const func = () => {
+const getAnswerAndQuestion = () => {
   const randomNumb1 = random(0, 10);
   const randomNumb2 = random(0, 10);
   const lengthOfSequence = 10;
@@ -26,4 +26,4 @@ const func = () => {
   const question = sequence;
   return [question, Number(correctAnswer)];
 };
-export default () => startGame(description, func);
+export default () => startGame(description, getAnswerAndQuestion);

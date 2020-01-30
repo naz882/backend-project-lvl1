@@ -19,7 +19,7 @@ const description = 'What is the result of the expression?.';
 
 const signs = ['+', '-', '*'];
 
-const func = () => {
+const getAnswerAndQuestion = () => {
   const rsign = Math.floor(Math.random() * signs.length);
   const randomSign = signs[rsign];
   const randomNumb1 = random(0, 10);
@@ -28,4 +28,4 @@ const func = () => {
   const question = `${randomNumb1} ${randomSign} ${randomNumb2}`;
   return [question, correctAnswer];
 };
-export default () => startGame(description, func);
+export default () => startGame(description, getAnswerAndQuestion);
