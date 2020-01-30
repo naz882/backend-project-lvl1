@@ -15,9 +15,9 @@ const getGcd = (number1, number2) => {
 
 const description = 'Find the greatest common divisor of given numbers.';
 const func = () => {
-  const randomNumb1 = random(0, 100);
-  const randomNumb2 = random(0, 100);
-  const question = `Question: ${randomNumb1} ${randomNumb2}`;
+  const randomNumb1 = random(0, 20);
+  const randomNumb2 = random(0, 20);
+  const question = `${randomNumb1} ${randomNumb2}`;
   const correctAnswer = getGcd(randomNumb1, randomNumb2);
   return [question, correctAnswer];
 };

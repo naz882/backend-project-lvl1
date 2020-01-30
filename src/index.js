@@ -14,7 +14,7 @@ const startGame = (description, getData, game) => {
     const array = getData();
     const question = array[0];
     const correctAnswer = array[1];
-    console.log(question);
+    console.log('Question:', question);
     let yourAnswer = readlineSync.question('Your answer: ');
     if (game !== 'answerisString') {
       yourAnswer = Number(yourAnswer);

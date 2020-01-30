@@ -25,7 +25,7 @@ const func = () => {
   const randomNumb1 = random(0, 10);
   const randomNumb2 = random(0, 10);
   const correctAnswer = OperationWithTwoNumbers(randomNumb1, randomNumb2, randomSign);
-  const question = `Question: ${randomNumb1} ${randomSign} ${randomNumb2}`;
+  const question = `${randomNumb1} ${randomSign} ${randomNumb2}`;
   return [question, correctAnswer];
 };
 export default () => startGame(description, func);

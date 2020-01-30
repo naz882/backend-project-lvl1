@@ -18,7 +18,7 @@ const description = 'Answer "yes" if the number is even, otherwise answer "no".'
 const func = () => {
   const randomNumb = random(0, 100);
   const correctAnswer = isPrimeNumber(randomNumb) ? 'yes' : 'no';
-  const question = `Question: ${randomNumb}`;
+  const question = randomNumb;
   return [question, correctAnswer];
 };
 export default () => startGame(description, func, 'answerisString');

@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-
+import random from '../../utils';
 import startGame from '../..';
 
-const getArithmeticSequence = (start, step) => {
+const getArithmeticSequence = (start, step, length) => {
   const result = [];
   let k = 0;
   let newStart = start;
-  while (k < 10) {
+  while (k < length) {
     result.push(newStart);
     newStart += step;
     k += 1;
@@ -16,13 +16,14 @@ const getArithmeticSequence = (start, step) => {
 
 const description = 'What number is missing in the progression?';
 const func = () => {
-  const randomNumb1 = Math.floor(Math.random() * 10);
-  const randomNumb2 = Math.floor(Math.random() * 10);
-  const sequence = getArithmeticSequence(randomNumb1, randomNumb2);
+  const randomNumb1 = random(0, 10);
+  const randomNumb2 = random(0, 10);
+  const lengthOfSequence = 10;
+  const sequence = getArithmeticSequence(randomNumb1, randomNumb2, lengthOfSequence);
   const randomElementOfSequence = Math.floor(Math.random() * sequence.length);
   const correctAnswer = sequence[randomElementOfSequence];
   sequence[randomElementOfSequence] = '..';
-  const question = `Question: ${sequence}`;
+  const question = sequence;
   return [question, Number(correctAnswer)];
 };
 export default () => startGame(description, func);
