@@ -12,11 +12,8 @@ const startGame = (description, getData, game) => {
     const question = array[0];
     const correctAnswer = array[1];
     console.log('Question:', question);
-    let yourAnswer = readlineSync.question('Your answer: ');
-    if (game !== 'answerisString') {
-      yourAnswer = Number(yourAnswer);
-    }
-    if (yourAnswer === correctAnswer) {
+    const yourAnswer = readlineSync.question('Your answer: ');
+    if (String(yourAnswer) === String(correctAnswer)) {
       console.log('Correct!');
       gameCount += 1;
     } else {
