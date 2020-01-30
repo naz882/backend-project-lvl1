@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import startGame from '../..';
+import random from '../../utils';
 
 const OperationWithTwoNumbers = (number1, number2, sign) => {
   if (sign === '-') {
@@ -19,10 +20,10 @@ const description = 'What is the result of the expression?.';
 const signs = ['+', '-', '*'];
 
 const func = () => {
-  const random = Math.floor(Math.random() * signs.length);
-  const randomNumb1 = Math.floor(Math.random() * 10);
-  const randomNumb2 = Math.floor(Math.random() * 10);
-  const randomSign = signs[random];
+  const rsign = Math.floor(Math.random() * signs.length);
+  const randomSign = signs[rsign];
+  const randomNumb1 = random(0, 10);
+  const randomNumb2 = random(0, 10);
   const correctAnswer = OperationWithTwoNumbers(randomNumb1, randomNumb2, randomSign);
   const question = `Question: ${randomNumb1} ${randomSign} ${randomNumb2}`;
   return [question, correctAnswer];

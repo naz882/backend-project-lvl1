@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import startGame from '../..';
+import random from '../../utils';
 
 const getGcd = (number1, number2) => {
   const smallestNumber = number1 > number2 ? number2 : number1;
@@ -14,8 +15,8 @@ const getGcd = (number1, number2) => {
 
 const description = 'Find the greatest common divisor of given numbers.';
 const func = () => {
-  const randomNumb1 = Math.floor(Math.random() * 100);
-  const randomNumb2 = Math.floor(Math.random() * 100);
+  const randomNumb1 = random(0, 100);
+  const randomNumb2 = random(0, 100);
   const question = `Question: ${randomNumb1} ${randomNumb2}`;
   const correctAnswer = getGcd(randomNumb1, randomNumb2);
   return [question, correctAnswer];
