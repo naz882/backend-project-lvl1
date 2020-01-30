@@ -1,13 +1,9 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
-const getName = () => {
+const startGame = (description, getData, game) => {
   const name = readlineSync.question('May I have your name?: ');
   console.log(`Hello ${name} !`);
-  return name;
-};
-const startGame = (description, getData, game) => {
-  const greetings = getName();
   console.log(description);
   let gameCount = 0;
   while (gameCount < 3) {
@@ -24,10 +20,10 @@ const startGame = (description, getData, game) => {
       gameCount += 1;
     } else {
       console.log(`'${yourAnswer}' is wrong answer ;(. Correct answer was '${array[1]}'.`);
-      console.log(`Let's try again, ${greetings}!`);
+      console.log(`Let's try again, ${name}!`);
     }
   }
-  console.log(`Congratulations, ${greetings}`);
+  console.log(`Congratulations, ${name}`);
 };
 
 export default startGame;
