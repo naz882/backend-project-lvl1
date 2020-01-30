@@ -20,7 +20,7 @@ const startGame = (description, getData, game) => {
       console.log('Correct!');
       gameCount += 1;
     } else {
-      console.log(`'${yourAnswer}' is wrong answer ;(. Correct answer was '${array[1]}'.`);
+      console.log(`'${yourAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
     }
   }
