@@ -3,16 +3,16 @@ import startGame from '../..';
 import random from '../../utils';
 
 const OperationWithTwoNumbers = (number1, number2, sign) => {
-  if (sign === '-') {
-    return number1 - number2;
+  switch (sign) {
+    case '-':
+      return number1 - number2;
+    case '+':
+      return number1 + number2;
+    case '*':
+      return number1 * number2;
+    default:
+      return null;
   }
-  if (sign === '+') {
-    return number1 + number2;
-  }
-  if (sign === '*') {
-    return number1 * number2;
-  }
-  return null;
 };
 
 const description = 'What is the result of the expression?.';
