@@ -5,8 +5,9 @@ const startGame = (description, getData, game) => {
   const name = readlineSync.question('May I have your name?: ');
   console.log(`Hello ${name} !`);
   console.log(description);
+  const gameAttempts = 3;
   let gameCount = 0;
-  while (gameCount < 3) {
+  while (gameCount < gameAttempts) {
     const array = getData();
     const question = array[0];
     const correctAnswer = array[1];
