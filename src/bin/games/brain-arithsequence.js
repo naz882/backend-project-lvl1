@@ -3,27 +3,26 @@ import startGame from '../..';
 
 const getArithmeticSequence = (start, step, length) => {
   const result = [];
-  let k = 0;
-  let newStart = start;
-  while (k < length) {
-    result.push(newStart);
-    newStart += step;
-    k += 1;
+  let first = start;
+  for (let i = 0; i < length; i += 1) {
+    result.push(first);
+    first += step;
   }
   return result;
 };
 
-const lengthOfSequence = 10;
+
 const description = 'What number is missing in the progression?';
+const lengthOfSequence = 10;
 
 const getAnswerAndQuestion = () => {
   const randomNumb1 = random(0, 10);
   const randomNumb2 = random(0, 10);
   const sequence = getArithmeticSequence(randomNumb1, randomNumb2, lengthOfSequence);
-  const randomElementOfSequence = Math.floor(Math.random() * sequence.length);
-  const correctAnswer = sequence[randomElementOfSequence];
+  const randomElementOfSequence = random(0, sequence.length);
+  const correctAnswer = String(sequence[randomElementOfSequence]);
   sequence[randomElementOfSequence] = '..';
   const question = sequence;
-  return [question, Number(correctAnswer)];
+  return [question, correctAnswer];
 };
 export default () => startGame(description, getAnswerAndQuestion);

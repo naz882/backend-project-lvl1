@@ -17,7 +17,7 @@ const getAnswerAndQuestion = () => {
   const randomNumb1 = random(0, 20);
   const randomNumb2 = random(0, 20);
   const question = `${randomNumb1} ${randomNumb2}`;
-  const correctAnswer = getGcd(randomNumb1, randomNumb2);
+  const correctAnswer = String(getGcd(randomNumb1, randomNumb2));
   return [question, correctAnswer];
 };
 export default () => startGame(description, getAnswerAndQuestion);
