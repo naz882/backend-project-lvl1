@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import startGame from '../..';
 import random from '../../utils';
 

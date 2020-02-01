@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import brainEven from './bin/games/brain-even';
 import brainCalc from './bin/games/brain-calc';
