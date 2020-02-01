@@ -6,6 +6,7 @@ const startGame = (description, getData) => {
   console.log(description);
   const gameAttempts = 3;
   let gameCount = 0;
+
   while (gameCount < gameAttempts) {
     const array = getData();
     const question = array[0];
