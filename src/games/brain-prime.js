@@ -1,5 +1,5 @@
-import random from '../../utils';
-import startGame from '../..';
+import random from '../utils';
+import startGame from '..';
 
 const isPrimeNumber = (number) => {
   if (number <= 0 || number === 1) {

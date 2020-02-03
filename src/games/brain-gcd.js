@@ -1,5 +1,5 @@
-import startGame from '../..';
-import random from '../../utils';
+import startGame from '..';
+import random from '../utils';
 
 const getGcd = (number1, number2) => {
   const smallestNumber = number1 > number2 ? number2 : number1;

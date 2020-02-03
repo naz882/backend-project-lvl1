@@ -3,10 +3,8 @@ import startGame from '..';
 
 const getArithmeticSequence = (start, step, length) => {
   const result = [];
-  let first = start;
   for (let i = 0; i < length; i += 1) {
-    result.push(first);
-    first += step;
+    result.push(start + i * step);
   }
   return result;
 };
@@ -19,10 +17,9 @@ const getAnswerAndQuestion = () => {
   const randomNumb1 = random(0, 10);
   const randomNumb2 = random(0, 10);
   const sequence = getArithmeticSequence(randomNumb1, randomNumb2, lengthOfSequence);
-  const randomElementOfSequence = random(0, sequence.length);
-  const correctAnswer = String(sequence[randomElementOfSequence]);
-  sequence[randomElementOfSequence] = '..';
-  const question = sequence;
-  return [question, correctAnswer];
+  const randomIndex = random(0, sequence.length - 1);
+  const correctAnswer = String(sequence[randomIndex]);
+  sequence[randomIndex] = '..';
+  return [sequence, correctAnswer];
 };
 export default () => startGame(description, getAnswerAndQuestion);

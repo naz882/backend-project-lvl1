@@ -19,8 +19,8 @@ const description = 'What is the result of the expression?.';
 const signs = ['+', '-', '*'];
 
 const getAnswerAndQuestion = () => {
-  const rsign = random(0, signs.length - 1);
-  const randomSign = signs[rsign];
+  const randomIndex = random(0, signs.length - 1);
+  const randomSign = signs[randomIndex];
   const randomNumb1 = random(0, 10);
   const randomNumb2 = random(0, 10);
   const correctAnswer = String(solveMathProblem(randomNumb1, randomNumb2, randomSign));
