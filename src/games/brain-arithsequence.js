@@ -1,5 +1,5 @@
-import random from '../../utils';
-import startGame from '../..';
+import random from '../utils';
+import startGame from '..';
 
 const getArithmeticSequence = (start, step, length) => {
   const result = [];

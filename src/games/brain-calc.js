@@ -1,5 +1,5 @@
-import startGame from '../..';
-import random from '../../utils';
+import startGame from '..';
+import random from '../utils';
 
 const solveMathProblem = (number1, number2, sign) => {
   switch (sign) {

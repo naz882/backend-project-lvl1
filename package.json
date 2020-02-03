@@ -2,7 +2,7 @@
   "name": "backend-project-lvl1",
   "version": "1.0.0",
   "description": "hexlet project: brain games",
-  "main": "index.js",
+  "keywords": ["brain-games", "hexlet-project-#1", "intellectual-games"],
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },

@@ -1,9 +1,9 @@
 import readlineSync from 'readline-sync';
-import brainEven from './bin/games/brain-even';
-import brainCalc from './bin/games/brain-calc';
-import brainGcd from './bin/games/brain-gcd';
-import brainArithsequence from './bin/games/brain-arithsequence';
-import brainPrime from './bin/games/brain-prime';
+import brainEven from './games/brain-even';
+import brainCalc from './games/brain-calc';
+import brainGcd from './games/brain-gcd';
+import brainArithsequence from './games/brain-arithsequence';
+import brainPrime from './games/brain-prime';
 
 export default () => {
   console.log('Welcome to the Brain Games!');
