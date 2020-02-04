@@ -7,4 +7,7 @@
 
 
 ## Install 
-$ sudo npm install brain-games-nazym -g
+$ sudo npm install brain-games-nazymg -g
+
+## Run 
+$ brain-games
