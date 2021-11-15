@@ -6,7 +6,13 @@ jobs:
 
     steps:
       - name: npm install
-        run: make install
-          
-      - name: run-eslint
-        run: make lint
+        # Install project
+        run: |
+          make install
+        # Add environment variables
+        env:
+          CI: true
+      - name: Run linter
+        # Run Linter
+        run: |
+          make lint
