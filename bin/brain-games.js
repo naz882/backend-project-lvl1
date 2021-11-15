@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { toWeclome } from "../src/cli.js";
+import defaultExport from '../src/cli.js';
 
-toWeclome();
+defaultExport();
