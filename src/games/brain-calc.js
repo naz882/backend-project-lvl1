@@ -18,7 +18,7 @@ const getRandomSign = () => {
   }
 }
 
-const checkAnswer = (a, b, sign) => {
+const getAnswer = (a, b, sign) => {
   if (sign === '*'){
     return a * b;
   }
@@ -39,7 +39,7 @@ export const brainCalc = (name) => {
     const sign = getRandomSign();
     console.log(`Question: ${a} ${sign} ${b}`);
     const answer = readlineSync.question('Your answer: ').toLowerCase();
-    const rightAnswer = checkAnswer(a, b, sign);
+    const rightAnswer = getAnswer(a, b, sign);
     if (answer == rightAnswer) {
       console.log('Correct!');
       myCorrectAnswer += 1;

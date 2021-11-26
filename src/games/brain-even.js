@@ -5,7 +5,7 @@ const getRandomIntInclusive = (min, max) => {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
 }
-const checkAnswer = (number) => {
+const getAnswer = (number) => {
   if (number % 2 == 0) {
     return 'yes';
   }
@@ -19,7 +19,7 @@ export const brainEven = (name) => {
     const question = getRandomIntInclusive(1, 20);
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ').toLowerCase();
-    if (answer == checkAnswer(question)) {
+    if (answer == getkAnswer(question)) {
       console.log('Correct!');
       myCorrectAnswer += 1;
     } else {
