@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getRandomIntInclusive } from '../Utils/funcs';
+import { getRandomIntInclusive } from '../Utils/funcs.js';
 
 export const brainPrime = (name) => {
   const correctAnswer = 3;

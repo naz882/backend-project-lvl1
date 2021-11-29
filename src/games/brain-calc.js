@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getRandomIntInclusive } from '../Utils/funcs';
+import { getRandomIntInclusive } from '../Utils/funcs.js';
 
 const getRandomSign = () => {
   const numb = Math.floor(Math.random() * 3);

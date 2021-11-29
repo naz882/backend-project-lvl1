@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getRandomIntInclusive } from '../Utils/funcs';
+import { getRandomIntInclusive } from '../Utils/funcs.js';
 
 const generateProgression = () => {
   const randomIncreasing = getRandomIntInclusive(1, 5);

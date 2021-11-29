@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getRandomIntInclusive } from '../Utils/funcs';
+import { getRandomIntInclusive } from '../Utils/funcs.js';
 
 const getAnswer = (firstNumb, secondNumb) => {
   const min = Math.min(firstNumb, secondNumb);
