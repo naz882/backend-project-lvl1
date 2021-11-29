@@ -39,7 +39,7 @@ export default (name) => {
     console.log(`Question: ${a} ${sign} ${b}`);
     const answer = readlineSync.question('Your answer: ').toLowerCase();
     const rightAnswer = getAnswer(a, b, sign);
-    if (parseInt(answer) === rightAnswer) {
+    if (parseInt(answer, 10) === rightAnswer) {
       console.log('Correct!');
       myCorrectAnswer += 1;
     } else {
