@@ -1,10 +1,6 @@
 import readlineSync from 'readline-sync';
+import { getRandomIntInclusive } from '../Utils/funcs';
 
-const getRandomIntInclusive = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
-}
 const getAnswer = (number) => {
   if (number % 2 == 0) {
     return 'yes';
