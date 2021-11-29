@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import toWelcome from '../src/cli.js';
-import { brainPrime } from '../src/games/brain-prime.js';
+import brainPrime from '../src/games/brain-prime.js';
 
 const name = toWelcome();
 console.log(`Hello, ${name}`);
