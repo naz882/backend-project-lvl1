@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getRandomIntInclusive } from '../Utils/funcs.js';
+import getRandomIntInclusive from '../Utils/funcs.js';
 
 const getAnswer = (number) => {
   if (number % 2 == 0) {
@@ -15,13 +15,13 @@ export const brainEven = (name) => {
     const question = getRandomIntInclusive(1, 20);
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ').toLowerCase();
-    if (answer == getkAnswer(question)) {
+    if (answer === getAnswer(question)){
       console.log('Correct!');
       myCorrectAnswer += 1;
-    } else {
+    } else{
       console.log(`${answer} is wrong answer (. Correct answer was ${question}.`);
       console.log(`Let's try again, ${name}`);
       myCorrectAnswer = 0;
-    }
-  }
+    };
+  };
 }

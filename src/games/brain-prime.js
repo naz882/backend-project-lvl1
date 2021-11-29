@@ -1,24 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getRandomIntInclusive } from '../Utils/funcs.js';
-
-export const brainPrime = (name) => {
-  const correctAnswer = 3;
-  let myCorrectAnswer = 0;
-  while (myCorrectAnswer < correctAnswer) {
-    const numb = getRandomIntInclusive(1, 40);
-    const rightAnswer = isPrime(numb);
-    console.log(`Question: ${numb}`);
-    const answer = readlineSync.question('Your answer: ').toLowerCase();
-    if (answer == 'yes' && rightAnswer == true || answer == 'no' && rightAnswer == false) {
-      console.log('Correct!');
-      myCorrectAnswer += 1;
-    } else {
-      console.log(`${answer} is wrong answer (. Correct answer was ${rightAnswer}.`);
-      console.log(`Let's try again, ${name}`);
-      myCorrectAnswer = 0;
-    }
-  }
-}
+import getRandomIntInclusive from '../Utils/funcs.js';
 
 const isPrime = (numb) => {
   if (numb <= 2) {
@@ -32,3 +13,21 @@ const isPrime = (numb) => {
   return true;
 }
 
+export const brainPrime = (name) => {
+  const correctAnswer = 3;
+  let myCorrectAnswer = 0;
+  while (myCorrectAnswer < correctAnswer) {
+    const numb = getRandomIntInclusive(1, 40);
+    const rightAnswer = isPrime(numb);
+    console.log(`Question: ${numb}`);
+    const answer = readlineSync.question('Your answer: ').toLowerCase();
+    if ((answer === 'yes' && rightAnswer === true) || (answer === 'no' && rightAnswer === false)){
+      console.log('Correct!');
+      myCorrectAnswer += 1;
+    } else{
+      console.log(`${answer} is wrong answer (. Correct answer was ${rightAnswer}.`);
+      console.log(`Let's try again, ${name}`);
+      myCorrectAnswer = 0;
+    };
+  };
+}

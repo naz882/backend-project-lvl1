@@ -1,20 +1,18 @@
 import readlineSync from 'readline-sync';
-import { getRandomIntInclusive } from '../Utils/funcs.js';
+import getRandomIntInclusive from '../Utils/funcs.js';
 
 const generateProgression = () => {
   const randomIncreasing = getRandomIntInclusive(1, 5);
   const randomStart = getRandomIntInclusive(1, 20);
   const progression = [];
   progression.push(randomStart);
-  for (let i = 1; i < 7; i += 1){
-    progression.push(progression[i-1]+randomIncreasing);
+  for (let i = 1; i < 7; i += 1) {
+    progression.push(progression[i-1] + randomIncreasing);
   }
   return progression;
 }
 
 export const brainProgression = (name) => {
-  
-
   const correctAnswer = 3;
   let myCorrectAnswer = 0;
   while (myCorrectAnswer < correctAnswer) {
@@ -33,7 +31,5 @@ export const brainProgression = (name) => {
       console.log(`Let's try again, ${name}`);
       myCorrectAnswer = 0;
     }
-  }
-
-
-} 
+  };
+}

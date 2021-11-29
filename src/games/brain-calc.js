@@ -1,15 +1,17 @@
 import readlineSync from 'readline-sync';
-import { getRandomIntInclusive } from '../Utils/funcs.js';
+import getRandomIntInclusive from '../Utils/funcs.js';
 
-const getRandomSign = () => {
+function getRandomSign() {
   const numb = Math.floor(Math.random() * 3);
-  switch(numb) {
+  switch (numb) {
     case 0:
       return '*';
     case 1:
       return '-';
     case 2:
       return '+';
+    default:
+      break;
   }
 }
 
@@ -35,13 +37,13 @@ export const brainCalc = (name) => {
     console.log(`Question: ${a} ${sign} ${b}`);
     const answer = readlineSync.question('Your answer: ').toLowerCase();
     const rightAnswer = getAnswer(a, b, sign);
-    if (answer == rightAnswer) {
+    if (answer === rightAnswer) {
       console.log('Correct!');
       myCorrectAnswer += 1;
-    } else {
+    } else{
       console.log(`${answer} is wrong answer (. Correct answer was ${rightAnswer}.`);
       console.log(`Let's try again, ${name}`);
       myCorrectAnswer = 0;
-    }
-  }
+    };
+  };
 }
