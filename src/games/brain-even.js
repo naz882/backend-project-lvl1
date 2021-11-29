@@ -14,12 +14,13 @@ export default (name) => {
   while (myCorrectAnswer < correctAnswer) {
     const question = getRandomIntInclusive(1, 20);
     console.log(`Question: ${question}`);
+    const rightAnswer = getAnswer(question);
     const answer = readlineSync.question('Your answer: ').toLowerCase();
-    if (answer === getAnswer(question)) {
+    if (answer === rightAnswer) {
       console.log('Correct!');
       myCorrectAnswer += 1;
     } else {
-      console.log(`${answer} is wrong answer (. Correct answer was ${question}.`);
+      console.log(`${answer} is wrong answer (. Correct answer was ${rightAnswer}.`);
       console.log(`Let's try again, ${name}`);
       myCorrectAnswer = 0;
     }

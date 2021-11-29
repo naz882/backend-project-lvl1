@@ -15,10 +15,10 @@ const isPrime = (numb) => {
 
 const getAnswer = (bool) => {
   if (bool === 'true') {
-    return 'yes'
+    return 'yes';
   }
-  return 'no'
-}
+  return 'no';
+};
 
 export default (name) => {
   const correctAnswer = 3;
