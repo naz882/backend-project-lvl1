@@ -13,6 +13,13 @@ const isPrime = (numb) => {
   return true;
 };
 
+const getAnswer = (bool) => {
+  if (bool === 'true') {
+    return 'yes'
+  }
+  return 'no'
+}
+
 export default (name) => {
   const correctAnswer = 3;
   let myCorrectAnswer = 0;
@@ -21,11 +28,11 @@ export default (name) => {
     const rightAnswer = isPrime(numb);
     console.log(`Question: ${numb}`);
     const answer = readlineSync.question('Your answer: ').toLowerCase();
-    if ((answer === 'yes' && rightAnswer === true) || (answer === 'no' && rightAnswer === false)) {
+    if (answer === getAnswer(rightAnswer)) {
       console.log('Correct!');
       myCorrectAnswer += 1;
     } else {
-      console.log(`${answer} is wrong answer (. Correct answer was ${rightAnswer}.`);
+      console.log(`${answer} is wrong answer (. Correct answer was ${getAnswer(rightAnswer)}.`);
       console.log(`Let's try again, ${name}`);
       myCorrectAnswer = 0;
     }
