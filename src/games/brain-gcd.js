@@ -31,5 +31,5 @@ export default (name) => {
       myCorrectAnswer = 0;
     }
   }
-  console.log(`Congratulations, ${name}`);
+  console.log(`Congratulations, ${name}!`);
 };
