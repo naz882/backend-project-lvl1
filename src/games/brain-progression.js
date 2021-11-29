@@ -32,4 +32,5 @@ export default (name) => {
       myCorrectAnswer = 0;
     }
   }
+  console.lot(`Congratulations, ${name}`);
 };
