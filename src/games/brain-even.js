@@ -2,11 +2,11 @@ import readlineSync from 'readline-sync';
 import getRandomIntInclusive from '../Utils/funcs.js';
 
 const isEven = (number) => number % 2 === 0;
-const rightAnswer = (isEven) => {
-  if (isEven) {
-    return "yes";
+const rightAnswer = (bool) => {
+  if (bool) {
+    return 'yes';
   }
-  return "no";
+  return 'no';
 };
 
 export default (name) => {
