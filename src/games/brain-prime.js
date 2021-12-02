@@ -31,7 +31,6 @@ export default (name) => {
     if (answer === getAnswer(rightAnswer)) {
       console.log('Correct!');
       myCorrectAnswer += 1;
-      console.log(`Congratulations, ${name}!`);
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
@@ -39,5 +38,4 @@ export default (name) => {
       break;
     }
     console.log(`Congratulations, ${name}!`);
-  }
 };
