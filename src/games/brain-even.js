@@ -1,11 +1,12 @@
 import readlineSync from 'readline-sync';
 import getRandomIntInclusive from '../Utils/funcs.js';
 
-const getAnswer = (number) => {
-  if (number % 2 === 0) {
-    return 'yes';
+const isEven = (number) => number % 2 === 0;
+const rightAnswer = (isEven) => {
+  if (isEven) {
+    return "yes";
   }
-  return 'no';
+  return "no";
 };
 
 export default (name) => {
@@ -14,13 +15,13 @@ export default (name) => {
   while (myCorrectAnswer < correctAnswer) {
     const question = getRandomIntInclusive(1, 20);
     console.log(`Question: ${question}`);
-    const rightAnswer = getAnswer(question);
+    const rightAnswer1 = rightAnswer(isEven(question));
     const answer = readlineSync.question('Your answer: ').toLowerCase();
-    if (answer === rightAnswer) {
+    if (answer === rightAnswer1) {
       console.log('Correct!');
       myCorrectAnswer += 1;
     } else {
-      console.log(`${answer} is wrong answer (. Correct answer was ${rightAnswer}.`);
+      console.log(`${answer} is wrong answer (. Correct answer was ${rightAnswer1}.`);
       console.log(`Let's try again, ${name}`);
       myCorrectAnswer = 0;
     }
