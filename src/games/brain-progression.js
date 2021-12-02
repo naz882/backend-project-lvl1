@@ -21,7 +21,7 @@ export default (name) => {
     const rightAnswer = progression[randomIndex];
     const question = [...progression];
     question[randomIndex] = '..';
-    console.log(`Question: ${question}`);
+    console.log(`Question: ${question.join(' ')}`);
     const answer = readlineSync.question('Your answer: ');
     if (answer === rightAnswer) {
       console.log('Correct!');
