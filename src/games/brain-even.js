@@ -26,6 +26,7 @@ export default (name) => {
       myCorrectAnswer = 0;
       break;
     }
+    console.log(`Congratulations, ${name}!`);
   }
-  console.log(`Congratulations, ${name}!`);
+  
 };
