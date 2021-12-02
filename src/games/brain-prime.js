@@ -30,11 +30,11 @@ export default (name) => {
     const answer = readlineSync.question('Your answer: ').toLowerCase();
     if (answer === getAnswer(rightAnswer)) {
       console.log('Correct!');
-      myCorrectAnswer += 1;
+      break;
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
-      myCorrectAnswer += 1;
+      break;
     }
 
   }
