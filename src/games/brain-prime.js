@@ -34,7 +34,7 @@ export default (name) => {
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
-      myCorrectAnswer -= 1;
+      myCorrectAnswer += 1;
     }
   }
   console.log(`Congratulations, ${name}!`);
