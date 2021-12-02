@@ -22,7 +22,7 @@ const getAnswer = (bool) => {
 
 export default (name) => {
   let myAnswers = 0;
-  while (myAnswers < 3) {
+  while (true) {
     const numb = getRandomIntInclusive(1, 40);
     const rightAnswer = isPrime(numb);
     console.log(`Question: ${numb}`);
@@ -32,9 +32,7 @@ export default (name) => {
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
-      break;
     }
-    myAnswers += 1;
   }
   console.log(`Congratulations, ${name}!`);
 };
