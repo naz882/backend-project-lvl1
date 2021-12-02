@@ -21,21 +21,19 @@ const getAnswer = (bool) => {
 };
 
 export default (name) => {
-  const correctAnswer = 3;
-  let myCorrectAnswer = 0;
-  while (myCorrectAnswer < correctAnswer) {
+  let myAnswers = 0;
+  while (myAnswers < 3) {
     const numb = getRandomIntInclusive(1, 40);
     const rightAnswer = isPrime(numb);
     console.log(`Question: ${numb}`);
     const answer = readlineSync.question('Your answer: ').toLowerCase();
     if (answer === getAnswer(rightAnswer)) {
       console.log('Correct!');
-      myCorrectAnswer += 1;
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
-      myCorrectAnswer += 1;
     }
+    myAnswers += 1;
   }
   console.log(`Congratulations, ${name}!`);
 };
