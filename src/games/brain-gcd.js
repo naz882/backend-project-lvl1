@@ -22,7 +22,7 @@ export default (name) => {
     const rightAnswer = getAnswer(firstNumb, secondNumb);
     console.log(`Question: ${firstNumb} ${secondNumb}`);
     const answer = readlineSync.question('Your answer: ');
-    if (answer === rightAnswer) {
+    if (parseInt(answer, 10) === rightAnswer) {
       console.log('Correct!');
       myCorrectAnswer += 1;
     } else {
