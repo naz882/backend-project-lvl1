@@ -25,7 +25,7 @@ export default (name) => {
   let myCorrectAnswer = 0;
   while (myCorrectAnswer < correctAnswer){
     const numb = getRandomIntInclusive(1, 40);
-    const rightAnswer = isPrime(numb);
+    const rightAnswer = getAnswer(isPrime(numb));
     console.log(`Question: ${numb}`);
     const answer = readlineSync.question('Your answer: ').toLowerCase();
     if (answer === getAnswer(rightAnswer)) {
