@@ -23,7 +23,7 @@ export default (name) => {
     question[randomIndex] = '..';
     console.log(`Question: ${question.join(' ')}`);
     const answer = readlineSync.question('Your answer: ');
-    if (answer === rightAnswer) {
+    if (parseInt(answer, 10) === rightAnswer) {
       console.log('Correct!');
       myCorrectAnswer += 1;
     } else {
@@ -34,5 +34,4 @@ export default (name) => {
     }
     console.log(`Congratulations, ${name}!`);
   }
-  console.log(`Congratulations, ${name}!`);
 };
