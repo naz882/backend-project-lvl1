@@ -28,7 +28,7 @@ export default (name) => {
     const rightAnswer = getAnswer(isPrime(numb));
     console.log(`Question: ${numb}`);
     const answer = readlineSync.question('Your answer: ').toLowerCase();
-    if (answer === getAnswer(rightAnswer)) {
+    if (answer === rightAnswer) {
       console.log('Correct!');
       myCorrectAnswer += 1;
     } else {
