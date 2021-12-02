@@ -38,4 +38,5 @@ export default (name) => {
       break;
     }
     console.log(`Congratulations, ${name}!`);
+  }
 };
