@@ -32,10 +32,11 @@ export default (name) => {
       console.log('Correct!');
       myCorrectAnswer += 1;
     } else {
-      console.log(`${answer} is wrong answer (. Correct answer was ${getAnswer(rightAnswer)}.`);
-      console.log(`Let's try again, ${name}`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
+      console.log(`Let's try again, ${name}!`);
       myCorrectAnswer = 0;
+      break;
     }
+    console.log(`Congratulations, ${name}!`);
   }
-  console.log(`Congratulations, ${name}!`);
 };
