@@ -30,7 +30,8 @@ export default (name) => {
     const answer = readlineSync.question('Your answer: ').toLowerCase();
     if (answer === getAnswer(rightAnswer)) {
       console.log('Correct!');
-      break;
+      myCorrectAnswer += 1;
+      console.log(`Congratulations, ${name}!`);
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
@@ -38,5 +39,5 @@ export default (name) => {
     }
 
   }
-  console.log(`Congratulations, ${name}!`);
+  
 };
