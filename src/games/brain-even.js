@@ -24,6 +24,7 @@ export default (name) => {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer1}'.`);
       console.log(`Let's try again, ${name}`);
       myCorrectAnswer = 0;
+      break;
     }
   }
   console.log(`Congratulations, ${name}!`);
