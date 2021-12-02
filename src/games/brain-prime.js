@@ -14,7 +14,7 @@ const isPrime = (numb) => {
 };
 
 const getAnswer = (bool) => {
-  if (bool === 'true') {
+  if (bool) {
     return 'yes';
   }
   return 'no';
@@ -23,7 +23,7 @@ const getAnswer = (bool) => {
 export default (name) => {
   const correctAnswer = 3;
   let myCorrectAnswer = 0;
-  while (myCorrectAnswer < correctAnswer){
+  while (myCorrectAnswer < correctAnswer) {
     const numb = getRandomIntInclusive(1, 40);
     const rightAnswer = getAnswer(isPrime(numb));
     console.log(`Question: ${numb}`);
@@ -40,5 +40,4 @@ export default (name) => {
     }
     console.log(`Congratulations, ${name}!`);
   }
-  
 };
