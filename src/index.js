@@ -1,13 +1,13 @@
-import toWelcome from '../src/cli.js';
 import readlineSync from 'readline-sync';
+import toWelcome from './cli.js';
 
-export const run = (condition, getResult) => {
+export default (condition, getResult) => {
   const correctAnswer = 3;
   let myCorrectAnswer = 0;
   const name = toWelcome();
   console.log(condition);
   while (myCorrectAnswer < correctAnswer) {
-    const resultandQuestion = getResult()
+    const resultandQuestion = getResult();
     const question = resultandQuestion[0];
     const rightAnswer = resultandQuestion[1];
     console.log(`Question: ${question}`);
@@ -21,7 +21,6 @@ export const run = (condition, getResult) => {
       myCorrectAnswer = 0;
       break;
     }
-    
   }
   if (myCorrectAnswer === 3) {
     console.log(`Congratulations, ${name}!`);

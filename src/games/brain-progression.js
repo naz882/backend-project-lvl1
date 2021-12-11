@@ -1,5 +1,5 @@
 import getRandomIntInclusive from '../Utils/funcs.js';
-import { run } from '../index.js';
+import run from '../index.js';
 
 const generateProgression = () => {
   const randomIncreasing = getRandomIntInclusive(1, 5);
@@ -19,10 +19,10 @@ const generateQuestionandAnswer = () => {
   const question = [...progression];
   question[randomIndex] = '..';
   return [question.join(' '), rightAnswer];
-}
+};
 
 const condition = 'Find the greatest common divisor of given numbers.';
 
-export default () => { 
-  run(condition,  generateQuestionandAnswer);
+export default () => {
+  run(condition, generateQuestionandAnswer);
 };

@@ -1,5 +1,5 @@
 import getRandomIntInclusive from '../Utils/funcs.js';
-import { run } from '../index.js';
+import run from '../index.js';
 
 const isPrime = (numb) => {
   if (numb <= 2) {
@@ -28,6 +28,6 @@ const generateQuestionandAnswer = () => {
 
 const condition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-export default () => { 
-  run(condition,  generateQuestionandAnswer);
+export default () => {
+  run(condition, generateQuestionandAnswer);
 };

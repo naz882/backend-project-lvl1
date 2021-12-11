@@ -1,5 +1,5 @@
 import getRandomIntInclusive from '../Utils/funcs.js';
-import { run } from '../index.js'
+import run from '../index.js';
 
 const isEven = (number) => number % 2 === 0;
 
@@ -18,6 +18,6 @@ const generateQuestionandAnswer = () => {
 
 const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-export default () => { 
-  run(condition,  generateQuestionandAnswer);
+export default () => {
+  run(condition, generateQuestionandAnswer);
 };
