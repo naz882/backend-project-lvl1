@@ -2,10 +2,12 @@ import readlineSync from 'readline-sync';
 import toWelcome from './cli.js';
 
 export default (condition, getResult) => {
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name: ');
+  console.log(`Hello, ${name}`);
+  console.log(condition);
   const correctAnswer = 3;
   let myCorrectAnswer = 0;
-  const name = toWelcome();
-  console.log(condition);
   while (myCorrectAnswer < correctAnswer) {
     const resultandQuestion = getResult();
     const question = resultandQuestion[0];
