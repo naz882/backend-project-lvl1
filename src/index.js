@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync';
-import toWelcome from './cli.js';
 
 export default (condition, getResult) => {
   console.log('Welcome to the Brain Games!');
