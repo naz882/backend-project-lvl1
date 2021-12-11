@@ -1,5 +1,5 @@
-import readlineSync from 'readline-sync';
 import getRandomIntInclusive from '../Utils/funcs.js';
+import { run } from '../index.js';
 
 const generateProgression = () => {
   const randomIncreasing = getRandomIntInclusive(1, 5);
@@ -12,26 +12,17 @@ const generateProgression = () => {
   return progression;
 };
 
-export default (name) => {
-  const correctAnswer = 3;
-  let myCorrectAnswer = 0;
-  while (myCorrectAnswer < correctAnswer) {
-    const progression = generateProgression();
-    const randomIndex = getRandomIntInclusive(0, 6);
-    const rightAnswer = progression[randomIndex];
-    const question = [...progression];
-    question[randomIndex] = '..';
-    console.log(`Question: ${question.join(' ')}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (parseInt(answer, 10) === rightAnswer) {
-      console.log('Correct!');
-      myCorrectAnswer += 1;
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
-      myCorrectAnswer = 0;
-      break;
-    }
-    console.log(`Congratulations, ${name}!`);
-  }
+const generateQuestionandAnswer = () => {
+  const progression = generateProgression();
+  const randomIndex = getRandomIntInclusive(0, 6);
+  const rightAnswer = progression[randomIndex];
+  const question = [...progression];
+  question[randomIndex] = '..';
+  return [question.join(' '), rightAnswer];
+}
+
+const condition = 'Find the greatest common divisor of given numbers.';
+
+export default () => { 
+  run(condition,  generateQuestionandAnswer);
 };

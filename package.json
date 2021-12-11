@@ -1,13 +1,9 @@
 {
 
   "type": "module",
-
   "name": "@hexlet/code",
-
   "version": "1.0.0",
-
   "description": "[![Actions Status](https://github.com/naz882/backend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/naz882/backend-project-lvl1/actions)",
-
   "main": "index.js",
 
   "scripts": {
@@ -19,15 +15,12 @@
   "repository": {
 
     "type": "git",
-
     "url": "git+https://github.com/naz882/backend-project-lvl1.git"
 
   },
 
   "author": "",
-
   "license": "ISC",
-
   "bugs": {
 
     "url": "https://github.com/naz882/backend-project-lvl1/issues"
@@ -55,12 +48,8 @@
 
   "devDependencies": {
 
-    "@types/readline-sync": "^1.4.4",
-
     "eslint": "^8.2.0",
-
     "eslint-config-airbnb-base": "^15.0.0",
-
     "eslint-plugin-import": "^2.25.3"
 
   }

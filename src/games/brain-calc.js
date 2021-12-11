@@ -1,5 +1,5 @@
-import readlineSync from 'readline-sync';
 import getRandomIntInclusive from '../Utils/funcs.js';
+import { run } from '../index.js'
 
 const getRandomSign = () => {
   const numb = Math.floor(Math.random() * 3);
@@ -16,39 +16,26 @@ const getRandomSign = () => {
   return null;
 };
 
-const getAnswer = (a, b, sign) => {
+const generateQuestionandAnswer = () => {
+
+  const a = getRandomIntInclusive(1, 20);
+  const b = getRandomIntInclusive(1, 20);
+  const sign = getRandomSign();
+  let result;
   if (sign === '*') {
-    return a * b;
+    result = a * b;
   }
   if (sign === '+') {
-    return a + b;
+    result = a + b;
   }
   if (sign === '-') {
-    return a - b;
+    result = a - b;
   }
-  return null;
+  return [`${a} ${sign} ${b}`, result];
 };
 
-export default (name) => {
-  const correctAnswer = 3;
-  let myCorrectAnswer = 0;
-  while (myCorrectAnswer < correctAnswer) {
-    const a = getRandomIntInclusive(1, 20);
-    const b = getRandomIntInclusive(1, 20);
-    const sign = getRandomSign();
-    console.log(`Question: ${a} ${sign} ${b}`);
-    const answer = readlineSync.question('Your answer: ').toLowerCase();
-    const rightAnswer = getAnswer(a, b, sign);
-    if (parseInt(answer, 10) === rightAnswer) {
-      console.log('Correct!');
-      myCorrectAnswer += 1;
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
-      myCorrectAnswer = 0;
-      break;
-    }
-    console.log(`Congratulations, ${name}!`);
-  }
-  return null;
+const condition = 'What is the result of the expression?';
+
+export default () => { 
+  run(condition,  generateQuestionandAnswer);
 };

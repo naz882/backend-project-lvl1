@@ -1,7 +1,8 @@
-import readlineSync from 'readline-sync';
 import getRandomIntInclusive from '../Utils/funcs.js';
+import { run } from '../index.js'
 
 const isEven = (number) => number % 2 === 0;
+
 const rightAnswer = (bool) => {
   if (bool) {
     return 'yes';
@@ -9,23 +10,14 @@ const rightAnswer = (bool) => {
   return 'no';
 };
 
-export default (name) => {
-  const correctAnswer = 3;
-  let myCorrectAnswer = 0;
-  while (myCorrectAnswer < correctAnswer) {
-    const question = getRandomIntInclusive(1, 20);
-    console.log(`Question: ${question}`);
-    const rightAnswer1 = rightAnswer(isEven(question));
-    const answer = readlineSync.question('Your answer: ').toLowerCase();
-    if (answer === rightAnswer1) {
-      console.log('Correct!');
-      myCorrectAnswer += 1;
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer1}'.`);
-      console.log(`Let's try again, ${name}!`);
-      myCorrectAnswer = 0;
-      break;
-    }
-    console.log(`Congratulations, ${name}!`);
-  }
+const generateQuestionandAnswer = () => {
+  const question = getRandomIntInclusive(1, 20);
+  const answer = rightAnswer(isEven(question));
+  return [question, answer];
+};
+
+const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+export default () => { 
+  run(condition,  generateQuestionandAnswer);
 };
