@@ -6,8 +6,8 @@ export default (condition, getResult) => {
   console.log(`Hello, ${name}`);
   console.log(condition);
   let myCorrectAnswer = 0;
-  const roundsCounts = 3;
-  for (let i = 0; i < roundsCounts; i += 1) {
+  const roundsCount = 3;
+  for (let i = 0; i < roundsCount; i += 1) {
     const resultandQuestion = getResult();
     const question = resultandQuestion[0];
     const rightAnswer = resultandQuestion[1];
