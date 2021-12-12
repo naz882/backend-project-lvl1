@@ -16,10 +16,12 @@ const hideElement = (arr, randomIndex) => {
   const question = arr;
   question[randomIndex] = '..';
   return question.join(' ');
-}
+};
 
 const generateQuestionandAnswer = () => {
-  const progression = generateProgression(getRandomIntInclusive(1, 5), getRandomIntInclusive(1, 20));
+  const step = getRandomIntInclusive(1, 5);
+  const first = getRandomIntInclusive(1, 20);
+  const progression = generateProgression(step, first);
   const randomIndex = getRandomIntInclusive(0, 6);
   const rightAnswer = progression[randomIndex];
   const question = hideElement([...progression], randomIndex);

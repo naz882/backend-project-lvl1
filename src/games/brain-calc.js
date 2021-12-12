@@ -24,6 +24,8 @@ const generateQuestionandAnswer = () => {
     case '-':
       result = a - b;
       break;
+    default:
+      break;
   }
   return [`${a} ${sign} ${b}`, result];
 };
