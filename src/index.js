@@ -25,5 +25,6 @@ export default (condition, getResult) => {
   }
   if (myCorrectAnswer === 3) {
     console.log(`Congratulations, ${name}!`);
+    console.log(`Let's try again, ${name}!`);
   }
 };
