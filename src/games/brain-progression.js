@@ -1,27 +1,30 @@
 import getRandomIntInclusive from '../Utils/funcs.js';
 import run from '../index.js';
 
-const generateProgression = () => {
-  const randomIncreasing = getRandomIntInclusive(1, 5);
-  const randomStart = getRandomIntInclusive(1, 20);
+const condition = 'Find the greatest common divisor of given numbers.';
+
+const generateProgression = (step, first) => {
   const progression = [];
-  progression.push(randomStart);
-  for (let i = 1; i < 7; i += 1) {
-    progression.push(progression[i - 1] + randomIncreasing);
+  const lengthOfProgression = 7;
+  for (let i = 0; i < lengthOfProgression; i += 1) {
+    progression.push(first + (step * i));
   }
   return progression;
 };
 
+const hideElement = (arr, randomIndex) => {
+  const question = arr;
+  question[randomIndex] = '..';
+  return question.join(' ');
+}
+
 const generateQuestionandAnswer = () => {
-  const progression = generateProgression();
+  const progression = generateProgression(getRandomIntInclusive(1, 5), getRandomIntInclusive(1, 20));
   const randomIndex = getRandomIntInclusive(0, 6);
   const rightAnswer = progression[randomIndex];
-  const question = [...progression];
-  question[randomIndex] = '..';
-  return [question.join(' '), rightAnswer];
+  const question = hideElement([...progression], randomIndex);
+  return [question, rightAnswer];
 };
-
-const condition = 'Find the greatest common divisor of given numbers.';
 
 export default () => {
   run(condition, generateQuestionandAnswer);

@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
-import defaultExport from '../src/cli.js';
+import run from '../src/cli.js';
 
-defaultExport();
+console.log('Welcome to the Brain Games!');
+
+run();
+

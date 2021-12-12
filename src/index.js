@@ -5,9 +5,8 @@ export default (condition, getResult) => {
   const name = readlineSync.question('May I have your name: ');
   console.log(`Hello, ${name}`);
   console.log(condition);
-  const correctAnswer = 3;
   let myCorrectAnswer = 0;
-  while (myCorrectAnswer < correctAnswer) {
+  for (let i = 0; i < 3; i += 1) {
     const resultandQuestion = getResult();
     const question = resultandQuestion[0];
     const rightAnswer = resultandQuestion[1];

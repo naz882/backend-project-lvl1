@@ -12,7 +12,8 @@
 
 ## How to install
   1. Copy this repository to your computer.
-  2. Type command "make publish" to install it.
+  2. Type command "make install" to install it.
+  3. Type commande "make publish" npm will publish to the public registry.
   3. Type command "npm link" to create symlink.
 
 ## Rules

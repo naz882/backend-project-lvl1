@@ -1,6 +1,8 @@
 import getRandomIntInclusive from '../Utils/funcs.js';
 import run from '../index.js';
 
+const condition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 const isPrime = (numb) => {
   if (numb <= 2) {
     return true;
@@ -13,20 +15,11 @@ const isPrime = (numb) => {
   return true;
 };
 
-const getAnswer = (bool) => {
-  if (bool) {
-    return 'yes';
-  }
-  return 'no';
-};
-
 const generateQuestionandAnswer = () => {
-  const numb = getRandomIntInclusive(1, 40);
-  const rightAnswer = getAnswer(isPrime(numb));
-  return [numb, rightAnswer];
+  const number = getRandomIntInclusive(1, 40);
+  const rightAnswer = isPrime(number) ? 'yes' : 'no';
+  return [number, rightAnswer];
 };
-
-const condition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 export default () => {
   run(condition, generateQuestionandAnswer);
