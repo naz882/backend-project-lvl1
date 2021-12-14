@@ -1,4 +1,4 @@
-import getRandomIntInclusive from '../Utils/funcs.js';
+import getRandomIntInclusive from '../utils.js';
 import run from '../index.js';
 
 const condition = 'Find the greatest common divisor of given numbers.';

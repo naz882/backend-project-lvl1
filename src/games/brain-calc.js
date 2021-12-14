@@ -1,32 +1,27 @@
-import getRandomIntInclusive from '../Utils/funcs.js';
+import getRandomIntInclusive from '../utils.js';
 import run from '../index.js';
 
 const condition = 'What is the result of the expression?';
+const operations  = ['*', '+', '-'];
 
-const getRandomSign = () => {
-  const numb = Math.floor(Math.random() * 3);
-  const sign = ['*', '+', '-'];
-  return sign[numb];
+const calculate = (number1, number2, operation) => {
+  switch (operation) {
+    case '*':
+      return number1 * number2;
+    case '+':
+      return number1 + number2;
+    case '-':
+      return number1 - number2;
+    default:
+      return;
+  };
 };
 
 const generateQuestionandAnswer = () => {
   const a = getRandomIntInclusive(1, 20);
   const b = getRandomIntInclusive(1, 20);
-  const sign = getRandomSign();
-  let result;
-  switch (sign) {
-    case '*':
-      result = a * b;
-      break;
-    case '+':
-      result = a + b;
-      break;
-    case '-':
-      result = a - b;
-      break;
-    default:
-      break;
-  }
+  const operation = operations[getRandomIntInclusive(0, operations.length - 1)];
+  const result = calculate(a, b, operation);
   return [`${a} ${sign} ${b}`, result];
 };
 

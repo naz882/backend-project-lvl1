@@ -1,4 +1,4 @@
-import getRandomIntInclusive from '../Utils/funcs.js';
+import getRandomIntInclusive from '../utils.js';
 import run from '../index.js';
 
 const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
