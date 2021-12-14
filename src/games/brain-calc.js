@@ -2,7 +2,7 @@ import getRandomIntInclusive from '../utils.js';
 import run from '../index.js';
 
 const condition = 'What is the result of the expression?';
-const operations  = ['*', '+', '-'];
+const operations = ['*', '+', '-'];
 
 const calculate = (number1, number2, operation) => {
   switch (operation) {
@@ -13,8 +13,8 @@ const calculate = (number1, number2, operation) => {
     case '-':
       return number1 - number2;
     default:
-      return;
-  };
+      return null;
+  }
 };
 
 const generateQuestionandAnswer = () => {
@@ -22,7 +22,7 @@ const generateQuestionandAnswer = () => {
   const b = getRandomIntInclusive(1, 20);
   const operation = operations[getRandomIntInclusive(0, operations.length - 1)];
   const result = calculate(a, b, operation);
-  return [`${a} ${sign} ${b}`, result];
+  return [`${a} ${operation} ${b}`, result];
 };
 
 export default () => {
