@@ -23,7 +23,7 @@ const generateQuestionandAnswer = () => {
   const first = getRandomIntInclusive(1, 20);
   const progression = generateProgression(step, first);
   const hiddenIndex = getRandomIntInclusive(0, lengthOfProgression - 1);
-  const rightAnswer = progression[hiddenIndex];
+  const rightAnswer = progression[hiddenIndex].toString();
   const question = hideElement(progression, hiddenIndex);
   return [question, rightAnswer];
 };

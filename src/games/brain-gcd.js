@@ -17,7 +17,7 @@ const gcd = (firstNumber, secondNumber) => {
 const generateQuestionandAnswer = () => {
   const firstNumber = getRandomIntInclusive(1, 40);
   const secondNumber = getRandomIntInclusive(1, 40);
-  const rightAnswer = gcd(firstNumber, secondNumber);
+  const rightAnswer = gcd(firstNumber, secondNumber).toString();
   return [`${firstNumber} ${secondNumber}`, rightAnswer];
 };
 
